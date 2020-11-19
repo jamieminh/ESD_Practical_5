@@ -4,9 +4,17 @@
         <servlet-name>TriangleServlet</servlet-name>
         <servlet-class>com.TriangleServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>StudentServlet</servlet-name>
+        <servlet-class>com.StudentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TriangleServlet</servlet-name>
         <url-pattern>/TriangleServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentServlet</servlet-name>
+        <url-pattern>/StudentServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

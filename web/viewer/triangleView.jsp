@@ -14,5 +14,9 @@
     <body>
         <h2>The 3 sides was: ${side1}, ${side2}, ${side3} </h2>
         <h3>They create a(n) ${type} Triangle</h3>
+        <h3> <% String str = (String)request.getAttribute("type");
+            out.println(str);
+                
+            %></h3>
     </body>
 </html>
