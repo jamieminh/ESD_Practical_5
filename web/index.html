@@ -11,6 +11,20 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <div>
+            <h2>Enter your triangle sides</h2>
+            <form action='/Practical_5/TriangleServlet.do' method="post">
+                <label>Side 1</label>
+                <input type="text" name="side_1" />
+                <br/>            
+                <label>Side 2</label>
+                <input type="text" name="side_2" />
+                <br/>
+                <label>Side 3</label>
+                <input type="text" name="side_3" />
+                <br/>
+                <input type="submit" value="Evaluate"/>
+            </form>
+        </div>
     </body>
 </html>
