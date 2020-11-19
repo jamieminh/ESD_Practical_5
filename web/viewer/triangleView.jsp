@@ -1,7 +1,7 @@
 <%-- 
     Document   : triangle
     Created on : Nov 19, 2020, 9:30:47 PM
-    Author     : WIN 10
+    Author     : Jamie
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
