@@ -18,7 +18,7 @@ public class Triangle {
     
     public String evalTriangle() {
         if (!checkTriangle()) {
-            return "Non-Triangle";
+            return "Non-";
         }
         if ( (x == y) & (y == z) & (x == z) ) {
             return "Equilateral";
