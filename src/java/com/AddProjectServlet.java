@@ -17,37 +17,33 @@ import model.dbHandler.DBBean;
 
 /**
  *
- * @author Jamie
+ * @author WIN 10
  */
-public class StudentServlet extends HttpServlet {
-
+public class AddProjectServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            DBBean db = new DBBean();
-            String route = "";
-            String s = "";
-            
-            String rd = request.getParameter("click");
+            /* TODO output your page here. You may use following sample code. */
+            String stdID = request.getParameter("studentID");
+            String stdName = request.getParameter("studentName");
+            String projectTt = request.getParameter("projectTitle");
+            out.println("<h2>" + stdID + stdName + projectTt +"</h2>");
 
+            DBBean db = new DBBean();
             Connection con = (Connection) getServletContext().getAttribute("con");
-            String tb = (String) getServletContext().getAttribute("table"); 
             db.connect(con);
-                    
-            if (rd.equals("List")) {
-                s = db.doQuery("", tb);
-                route = "/viewer/result.jsp";
-            }
-            else {
-//                if user choose "Add new Record", redirect to the add.jsp page
-                route = "/viewer/add.jsp";
-            }
-                        
-    
-            request.setAttribute("data", s);
-            RequestDispatcher view = request.getRequestDispatcher(route);
-            view.forward(request,response);
+//            
+            String tb = (String) getServletContext().getAttribute("table");
+            out.println("<h2>" + tb +"</h2>");
+            String insert = "'" + stdID + "','" + stdName + "','" + projectTt + "'";            
+            out.println("<h2>" + insert +"</h2>");
+            
+            int success = db.addRecord(insert, tb);
+
+            request.setAttribute("data", success+ " project is added");
+            RequestDispatcher view = request.getRequestDispatcher("/index_db.html");
+            view.forward(request, response);
         }
     }
 
